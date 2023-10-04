@@ -23,13 +23,12 @@
  ### **不易读**
 
 ```clike
-#include<stdio.h>
+# include <stdio.h>
 int main()
 {
-int a=1;
-int b=2;
-int c=3;
-printf("%d",a+b+c);
+int a,b;
+scanf("%d%d",&a,&b);
+printf("%d + %d = %d\n%d - %d = %d\n%d * %d = %d\n%d / %d = %d",a,b,a+b,a,b,a-b,a,b,a*b,a,b,a/b);
 return 0;
 }
 ```
@@ -37,19 +36,23 @@ return 0;
 ### **依托答辩**
 
  ```clike
-#include <stdio.h> int main(){printf("Hello World");return 0;}
+# include <stdio.h>
+int main(){int a,b;scanf("%d%d",&a,&b);printf("%d + %d = %d\n%d - %d = %d\n%d * %d = %d\n%d / %d = %d",a,b,a+b,a,b,a-b,a,b,a*b,a,b,a/b);return 0;}
  ```
 
  ### **易读**
 
 ```clike
-#include<stdio.h>
+# include <stdio.h>
 
 int main(){
-    int a = 1;
-    int b = 2;
-    int c = 3;
-    printf("%d",a + b + c);
+    int a,b;
+    scanf("%d%d",&a,&b);
+    printf("%d + %d = %d\n%d - %d = %d\n%d * %d = %d\n%d / %d = %d",
+            a, b, a + b,
+            a, b, a - b,
+            a, b, a * b,
+            a, b, a / b);
     return 0;
 }
 ```
