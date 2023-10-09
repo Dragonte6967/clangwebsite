@@ -1,1 +1,1 @@
- <font color="grey">由Docsify强力驱动,问题反馈邮箱：dragonte@dragonte.top</font>
+ <font color="grey">由Docsify强力驱动,问题反馈或加入我们请联系邮箱：dragonte@dragonte.top</font>
