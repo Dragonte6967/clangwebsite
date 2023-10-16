@@ -1,9 +1,18 @@
 @font-face {
-    font-family: 'JBMono';
-    src: url("/fonts/jbmm.woff2") format('woff2');
+    font-family: 'mono';
+    src: url("/fonts/jbmm.woff2");
+}
+
+@font-face {
+    font-family: harmony;
+    src: url("/fonts/hmr.ttf");
+}
+
+body:not(code){
+    font-family: 'harmony' !important;
 }
 
 code {
-      font-family: 'JBMono' !important;
+      font-family: 'mono' !important;
   }
 
