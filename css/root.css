@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: harmony;
-    src: url("/fonts/hmr.ttf");
+    src: url("/fonts/hmr.ttf") format('typetrue');
 }
 code {
       font-family: 'mono' !important;
