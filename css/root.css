@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'JBMono';
+    src: url("/fonts/jbmm.woff2") format('woff2');
+}
+
+code {
+      font-family: 'JBMono' !important;
+  }
+
