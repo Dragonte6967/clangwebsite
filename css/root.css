@@ -4,7 +4,7 @@
 }
 
 @font-face {
-    font-family: 'harmony';
+    font-family: 'hm';
     src: url("/fonts/hmr.woff2");
 }
 code {
@@ -12,7 +12,7 @@ code {
 }
 
 body{
-    font-family: 'harmony' !important;
+    font-family: 'hm' !important;
 }
 
 
