@@ -1,15 +1,15 @@
-@font-face {
+/* @font-face {
     font-family: 'mono';
     src: url("/fonts/jbmm.woff2");
-}
+} */
 
 @font-face {
     font-family: 'hm';
     src: url("/fonts/hmr.woff2");
 }
-code {
-      font-family: 'mono' !important;
-}
+/* code {
+      font-family: 'consolas' !important;
+} */
 
 body{
     font-family: 'hm' !important;
