@@ -38,16 +38,16 @@
         var day = document.getElementById('day');
         var days = document.getElementById('days');
         var dieline = new Date("2023-12-16").getTime();
-        var ww = document.body.clientWidth;
-        var wh = document.body.clientHeight;
-        var cw = document.getElementById('gocenter').clientWidth;
-        var ch = document.getElementById('gocenter').clientHeight;
+        // var ww = document.body.clientWidth;
+        // var wh = document.body.clientHeight;
+        // var cw = document.getElementById('gocenter').clientWidth;
+        // var ch = document.getElementById('gocenter').clientHeight;
         var count = 0;
         setInterval(function () {
             var now = new Date().getTime();
-            document.getElementById('gocenter').style.position = 'absolute';
-            document.getElementById('gocenter').style.marginTop = (wh / 2) - (ch / 2) + 'px';
-            document.getElementById('gocenter').style.marginLeft = (ww / 2 - ch / 1.45) + 'px';
+            // document.getElementById('gocenter').style.position = 'absolute';
+            // document.getElementById('gocenter').style.marginTop = (wh / 2) - (ch / 2) + 'px';
+            // document.getElementById('gocenter').style.marginLeft = (ww / 2 - ch / 1.45) + 'px';
             body.onclick = function () {
                 count++;
                 if (count % 2 == 0) {
@@ -55,15 +55,15 @@
                     day.style.color = '#BDBDBD';
                     days.style.color = '#C62828';
                     title.style.color = '#E0E0E0';
-                    document.getElementById('gocenter').style.marginTop = (wh / 2) - (ch / 2) + 'px';
-                    document.getElementById('gocenter').style.marginLeft = (ww / 2 - ch / 1.45) + 'px';
+                    // document.getElementById('gocenter').style.marginTop = (wh / 2) - (ch / 2) + 'px';
+                    // document.getElementById('gocenter').style.marginLeft = (ww / 2 - ch / 1.45) + 'px';
                 } else {
                     body.style.backgroundColor = '#E8E8E8'
                     days.style.color = '#F44336';
                     day.style.color = '#8b8b8b';
                     title.style.color = '#121212';
-                    document.getElementById('gocenter').style.marginTop = (wh / 2) - (ch / 2) + 'px';
-                    document.getElementById('gocenter').style.marginLeft = (ww / 2 - ch / 1.45) + 'px';
+                    // document.getElementById('gocenter').style.marginTop = (wh / 2) - (ch / 2) + 'px';
+                    // document.getElementById('gocenter').style.marginLeft = (ww / 2 - ch / 1.45) + 'px';
                 }
             }
             document.getElementById("days").innerHTML = Math.floor((dieline - now) / (1000 * 60 * 60 * 24));
