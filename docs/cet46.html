@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <title>CET4&6COUNTDOWN</title>
+    <style>
+        #flex {
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 300%;
+            background-color: #e8e8e8;
+        }
+
+        #title {
+            color: #121212;
+        }
+
+        #day {
+            color: #8b8b8b;
+        }
+
+        #days {
+            color: #F44336;
+            font-size: 666%;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body id="flex">
+    <div id="gocenter">
+        <div id="title">CET-4 and CET-6<br /></div>
+        <div id="day"><span id="days">0</span>days left</div>
+    </div>
+
+    <script>
+        var body = document.getElementById('flex');
+        var title = document.getElementById('title');
+        var day = document.getElementById('day');
+        var days = document.getElementById('days');
+        var dieline = new Date("2023-12-16").getTime();
+        var ww = document.body.clientWidth;
+        var wh = document.body.clientHeight;
+        var cw = document.getElementById('gocenter').clientWidth;
+        var ch = document.getElementById('gocenter').clientHeight;
+        var count = 0;
+        setInterval(function () {
+            var now = new Date().getTime();
+            document.getElementById('gocenter').style.position = 'absolute';
+            document.getElementById('gocenter').style.marginTop = (wh / 2) - (ch / 2) + 'px';
+            document.getElementById('gocenter').style.marginLeft = (ww / 2 - ch / 1.45) + 'px';
+            body.onclick = function () {
+                count++;
+                if (count % 2 == 0) {
+                    body.style.backgroundColor = '#121212';
+                    day.style.color = '#BDBDBD';
+                    days.style.color = '#C62828';
+                    title.style.color = '#E0E0E0';
+                    document.getElementById('gocenter').style.marginTop = (wh / 2) - (ch / 2) + 'px';
+                    document.getElementById('gocenter').style.marginLeft = (ww / 2 - ch / 1.45) + 'px';
+                } else {
+                    body.style.backgroundColor = '#E8E8E8'
+                    days.style.color = '#F44336';
+                    day.style.color = '#8b8b8b';
+                    title.style.color = '#121212';
+                    document.getElementById('gocenter').style.marginTop = (wh / 2) - (ch / 2) + 'px';
+                    document.getElementById('gocenter').style.marginLeft = (ww / 2 - ch / 1.45) + 'px';
+                }
+            }
+            document.getElementById("days").innerHTML = Math.floor((dieline - now) / (1000 * 60 * 60 * 24));
+        }, 1000)
+    </script>
+</body>
+
+</html>
