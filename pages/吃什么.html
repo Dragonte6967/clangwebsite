@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <style>
+        #eat {
+            color: red;
+            font-size: 50px;
+            /* border:5px solid red;
+                border-radius: 15px */
+        }
+
+        #today {
+            font-size: 30px;
+        }
+
+        #result {
+            font-size: 30px;
+        }
+
+        #logs {
+            font-size: 16px;
+        }
+
+        html {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="today">今天吃什么？</p>
+    <strong id="eat">点我开抽（可以一直抽）</strong>
+    <p id="result">点我停止</p>
+    <div id="logs">记录</div>
+    <script>
+        var eat = document.getElementById('eat');
+        var logs = document.getElementById('logs');
+        var result = document.getElementById('result');
+        var eid = 0;
+        var myTimer = 0;
+
+        var ethings = ['豫香拉面', '胖老汉', '饺子', '馄饨', '摇滚炒鸡', '光头磊家的粥', '麻辣烫', '麻辣香锅', '炒饭', '屌丝套餐',
+            '担担面', '无骨鱼', '烤肉饭', '校堡王', '菜多多', '阳春面', '鸡蛋灌饼', '麦多馅饼', '小笼包', '锡纸粉',
+            '火锅鸡', '清汤面', '小树林黄焖鸡', '小树林鸡公煲', '厚亲套餐', '煎饼果子', '包子', '渔粉'];
+
+        eat.onclick = function () {
+            toEat();
+        }
+
+        result.onclick = function () {
+            toRes();
+        }
+
+        function toEat() {
+            myTimer = setInterval(() => {
+                eid = Math.floor(Math.random() * (ethings.length - 0 + 1)) + 0;
+                document.getElementById('eat').innerHTML = getEat(eid);
+            }, 70);
+        }
+        function toRes() {
+            clearInterval(myTimer);
+            logs.innerHTML = logs.innerHTML + '<br/>' + getEat(eid);
+            console.log('开始抽奖啦' + getEat(eid) + eid)
+        }
+
+        function getEat(id) {
+            if (ethings[id]) {
+                eat.style.color = 'red';
+                return ethings[id];
+            } else {
+                eat.style.color = 'green';
+                return "今天减肥，不吃啦";
+            }
+        }
+    </script>
+</body>
+
+</html>

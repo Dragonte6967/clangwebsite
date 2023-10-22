@@ -6,10 +6,11 @@
 
 <font color=#42b983>[点击此处传送至作业解析](/pages/作业.md)</font>
 
+<font color=#42b983>[如果你不知道今天吃什么，点这里抽一个吃吧:)](https://dragonte6967.gitee.io/pages/吃什么.html)</font>
 
 # CHANGE LOGS
 
-<font color=#42b983>
+<span style="color: #42b983; ">
 
  - 2023/10/16 更改代码字体为`JetBrains Mono`，网站字体为`Harmony Sans`
 
@@ -18,7 +19,7 @@
  - 2023/10/15 更新了两篇文档，优化了相关入口，网络连接不稳定尚未修复
 
  
-</font>
+</span>
 
 
 # 开始之前
