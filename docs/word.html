@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        一起背单词吧
+    </title>
+    <style>
+        html {
+            
+            text-align: center;
+            background-color: #000000;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            cursor: none !important;
+        }
+
+        #headWord {
+            
+            font-size: 200px;
+            color: #1E88E5;
+        }
+
+        #pos {
+            font-size: 120px;
+            color: #616161;
+            font-style: italic;
+        }
+
+        #tranCn {
+            font-size: 152px;
+            color:#a8a8a8;
+        }
+        #zwf{
+            color:#000000;
+            font-size: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="zwf">.</p>
+
+    <div>
+        <span id="headWord">0</span><br />
+        <span id="pos">0</span>
+        <span id="tranCn">0</span>
+    </div>
+    <script>
+        var url = '6.json1';
+        var wordRank = 0;
+        var request = new XMLHttpRequest();
+        request.open('GET', url);
+        request.send(null);
+        request.onload = function () {
+        if (request.status == 200) {
+        setInterval(() => {
+            if (wordRank == 2390) {
+                wordRank = 0;
+            }
+            
+            var data = request.responseText;
+            let code = data.split('\n'); // 根据换行或者回车进行识别
+            code.forEach((item, index) => { // 删除空项
+            if (!item) {
+                code.splice(index, 1);
+                        }
+                    })
+                    code = Array.from(new Set(code)); // 去重
+                    document.getElementById('headWord').innerHTML = JSON.parse(code[wordRank]).headWord;
+                    document.getElementById('pos').innerHTML = JSON.parse(code[wordRank]).content.word.content.trans[0].pos + '.';
+                    document.getElementById('tranCn').innerHTML = JSON.parse(code[wordRank]).content.word.content.trans[0].tranCn;
+                    wordRank++;
+                }, 1500);
+            }
+        }
+    </script>
+</body>
+
+</html>
