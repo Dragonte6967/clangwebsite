@@ -10,7 +10,7 @@
 
 # CHANGE LOGS
 
-<span style="color: #42b983; ">
+<font color= #42b983>
 
  - 2023/10/16 更改代码字体为`JetBrains Mono`，网站字体为`Harmony Sans`
 
@@ -19,7 +19,7 @@
  - 2023/10/15 更新了两篇文档，优化了相关入口，网络连接不稳定尚未修复
 
  
-</span>
+</font>
 
 
 # 开始之前
