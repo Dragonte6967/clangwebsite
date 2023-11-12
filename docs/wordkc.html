@@ -1,0 +1,120 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+    <title>
+        一起背单词吧
+    </title>
+    <style>
+        html {
+
+            text-align: center !important;
+            background-color: #000000 !important;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            /* cursor: none !important; */
+        }
+
+        #headWord {
+
+            font-size: 200px;
+            color: #1E88E5;
+        }
+
+        #pos {
+            font-size: 120px;
+            color: #616161;
+            font-style: italic;
+        }
+
+        #tranCn {
+            font-size: 152px;
+            color: #a8a8a8;
+        }
+
+        #zwf {
+            color: #000000;
+            font-size: 120px;
+        }
+
+        #inst {
+            color: #303030;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="zwf">&nbsp;</p>
+    <div>
+        <span id="headWord">0</span><br />
+        <span id="pos">0</span>
+        <span id="tranCn">0</span>
+
+    </div>
+    <p id="inst">按J下一个,K上一个,L随机</p>
+    <script>
+        var url = '6.json1';
+        var wordRank = 0;
+        var request = new XMLHttpRequest();
+        var data;
+        var code;
+        request.open('GET', url);
+        request.send(null);
+        request.onload = function () {
+            if (request.status == 200) {
+
+                if (wordRank == 2390) {
+                    wordRank = 0;
+                }
+                data = request.responseText;
+                code = data.split('\n'); // 根据换行或者回车进行识别
+                code.forEach((item, index) => { // 删除空项
+                    if (!item) {
+                        code.splice(index, 1);
+                    }
+                })
+                code = Array.from(new Set(code)); // 去重
+                pushWord(wordRank);
+            }
+        }
+        function pushWord(wordRank) {
+            document.getElementById('headWord').innerHTML = JSON.parse(code[wordRank]).headWord;
+            document.getElementById('pos').innerHTML = JSON.parse(code[wordRank]).content.word.content.trans[0].pos + '.';
+            document.getElementById('tranCn').innerHTML = JSON.parse(code[wordRank]).content.word.content.trans[0].tranCn;
+        }
+        function pre() {
+            wordRank--;
+            if (wordRank == -1) {
+                wordRank = 2389;
+            }
+            pushWord(wordRank);
+        }
+        function next() {
+            wordRank++;
+            if (wordRank == 2390) {
+                wordRank = 0;
+            }
+            pushWord(wordRank);
+        }
+        function randomWord() {
+            pushWord(parseInt(Math.random() * (2390), 10));
+        }
+        document.onkeydown = function (e) {    //对整个页面监听  
+            var keyNum = window.event ? e.keyCode : e.which;       //获取被按下的键值  
+            //判断如果用户按下了回车键（keycody=13||37||87||65||39||83||68）  
+            if (keyNum == 75) {
+                pre();
+            }
+            if (keyNum == 74) {
+                next();
+            }
+            if (keyNum == 76) {
+                randomWord();
+            }
+        } 
+    </script>
+
+
+</body>
+
+</html>
