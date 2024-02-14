@@ -21,8 +21,9 @@
 # CHANGE LOGS
 
 <font color= #42b983>
- - 2024/2/14 [2024NECCS](https://dragonte6967.gitee.io/docs/neccs/index.html)
 
+ - 2024/2/14 [ 2024NECCS ](https://dragonte6967.gitee.io/docs/neccs/index.html)
+ 
  - 2023/11/10 加入了[Preview](/pages/preview.md)页面，读者可以通过Preview页面查看正在编写的文章。
 
  - 2023/10/16 更改代码字体为`JetBrains Mono`，网站字体为`Harmony Sans`
